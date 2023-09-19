@@ -27,6 +27,8 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
+        // selected background color
+        indicatorColor: Color.fromRGBO(0, 0, 0, 0),
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -37,8 +39,11 @@ class _NavigationExampleState extends State<NavigationExample> {
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home,
-                color: Color.fromRGBO(243, 78, 58, 1), size: 50),
+            selectedIcon: Icon(
+              Icons.home,
+              color: Color.fromRGBO(243, 78, 58, 1),
+              size: 50,
+            ),
             icon: Icon(Icons.home_outlined,
                 color: Color.fromRGBO(159, 159, 159, 1), size: 50),
             label: '',
@@ -68,22 +73,22 @@ class _NavigationExampleState extends State<NavigationExample> {
       ),
       body: <Widget>[
         Container(
-          color: Colors.red,
+          color: const Color.fromRGBO(20, 21, 22, 1),
           alignment: Alignment.center,
-          child: const Text('Build your Body'),
+          child: const Text('Welcome, Roberto !'),
         ),
         Container(
-          color: Colors.green,
+          color: const Color.fromRGBO(20, 21, 22, 1),
           alignment: Alignment.center,
           child: const Text('Page 2'),
         ),
         Container(
-          color: Colors.blue,
+          color: const Color.fromRGBO(20, 21, 22, 1),
           alignment: Alignment.center,
           child: const Text('Page 3'),
         ),
         Container(
-          color: Colors.blue,
+          color: const Color.fromRGBO(20, 21, 22, 1),
           alignment: Alignment.center,
           child: const Text('Page 4'),
         ),
