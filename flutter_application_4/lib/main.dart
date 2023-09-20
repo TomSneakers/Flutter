@@ -319,28 +319,348 @@ class Accueil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-                '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Accueil.png'), // Remplacez par le chemin de votre image
-            fit: BoxFit.cover, // Pour ajuster l'image à la taille de l'écran
+      body: Stack(
+        children: [
+          // Image de fond
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Accueil.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        ),
+          // Image cliquable "Training"
+
+          Positioned.fill(
+            top: 50,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  // Naviguez vers la page Training lorsque l'image est cliquée
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Build(),
+                  ));
+                },
+                child: Image.asset(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Training.png',
+                  width:
+                      400.0, // Ajustez la largeur de l'image selon vos besoins
+                  height:
+                      150.0, // Ajustez la hauteur de l'image selon vos besoins
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 50.0),
+          // Deuxième image cliquable
+          Positioned.fill(
+            top: 350,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  // Naviguez vers la page de la deuxième image lorsque celle-ci est cliquée
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Training(),
+                  ));
+                },
+                child: Image.asset(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Build.png',
+                  width:
+                      400.0, // Ajustez la largeur de la deuxième image selon vos besoins
+                  height:
+                      150.0, // Ajustez la hauteur de la deuxième image selon vos besoins
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 50.0),
+          // Deuxième image cliquable
+          Positioned.fill(
+            top: 650,
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  // Naviguez vers la page de la deuxième image lorsque celle-ci est cliquée
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Map(),
+                  ));
+                },
+                child: Image.asset(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Find.png',
+                  width:
+                      400.0, // Ajustez la largeur de la deuxième image selon vos besoins
+                  height:
+                      150.0, // Ajustez la hauteur de la deuxième image selon vos besoins
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class Profile extends StatelessWidget {
+class Map extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Page d\'Accueil'),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Map.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 380,
+            top: 95,
+            // bottom: 120.0, // Décalage de 50 pixels vers le haut
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Container(
+                width: 25.0,
+                height: 25.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/angle-pointing-to-left.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
-      body: Center(
-        child: Text('Bienvenue sur la Page Pr !'),
+    );
+  }
+}
+
+class Build extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/PageBuild.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 380,
+            top: 95,
+            // bottom: 120.0, // Décalage de 50 pixels vers le haut
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Container(
+                width: 25.0,
+                height: 25.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/angle-pointing-to-left.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Training extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/PageTraining.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 380,
+            top: 70,
+            // bottom: 120.0, // Décalage de 50 pixels vers le haut
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Container(
+                width: 25.0,
+                height: 25.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/angle-pointing-to-left.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Profile extends StatefulWidget {
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  bool isImageChecked1 = false;
+  bool isImageChecked2 = false;
+  bool isImageChecked3 = false;
+  bool isImageChecked4 = false;
+  bool isImageChecked5 = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Image de fond
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Profile.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 80.0),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isImageChecked1 = !isImageChecked1;
+                  });
+                },
+                child: Center(
+                  child: Image(
+                    image: AssetImage(
+                      isImageChecked1
+                          ? '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card11.png'
+                          : '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card12.png',
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isImageChecked2 = !isImageChecked2;
+                  });
+                },
+                child: Center(
+                  child: Image(
+                    image: AssetImage(
+                      isImageChecked2
+                          ? '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card13.png'
+                          : '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card14.png',
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isImageChecked3 = !isImageChecked3;
+                  });
+                },
+                child: Center(
+                  child: Image(
+                    image: AssetImage(
+                      isImageChecked3
+                          ? '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card15.png'
+                          : '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card16.png',
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isImageChecked4 = !isImageChecked4;
+                  });
+                },
+                child: Center(
+                  child: Image(
+                    image: AssetImage(
+                      isImageChecked4
+                          ? '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card17.png'
+                          : '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card18.png',
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isImageChecked5 = !isImageChecked5;
+                  });
+                },
+                child: Center(
+                  child: Image(
+                    image: AssetImage(
+                      isImageChecked5
+                          ? '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card19.png'
+                          : '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Card20.png',
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -350,11 +670,44 @@ class Book extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Page d\'Accueil'),
-      ),
-      body: Center(
-        child: Text('Bienvenue sur la Page d\'entrainement!'),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/PageBook.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 380,
+            top: 55,
+            // bottom: 120.0, // Décalage de 50 pixels vers le haut
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Container(
+                width: 25.0,
+                height: 25.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/angle-pointing-to-left.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -364,11 +717,44 @@ class Stats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Page d\'Accueil'),
-      ),
-      body: Center(
-        child: Text('Bienvenue sur la Page Stats !'),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/Food.png',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 380,
+            top: 50,
+            // bottom: 120.0, // Décalage de 50 pixels vers le haut
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Container(
+                width: 25.0,
+                height: 25.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      '/Users/tomdesvignes/Documents/RPI/Flutter1/flutter_application_4/assets/images/angle-pointing-to-left.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
